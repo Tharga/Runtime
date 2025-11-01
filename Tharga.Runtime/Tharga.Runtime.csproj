@@ -6,8 +6,8 @@
 		<Version>1.0.0</Version>
 		<Authors>Daniel Bohlin</Authors>
 		<Company>Thargelion AB</Company>
-		<Product>Tharga Toolkit</Product>
-		<Description>Various tools for collections, DateTime, Luhn, Compare and Assembly.</Description>
+		<Product>Tharga Runtime</Product>
+		<Description>Tools Assembly.</Description>
 		<PackageIconUrl>http://thargelion.se/wp-content/uploads/2019/11/Thargelion-White-Icon-150.png</PackageIconUrl>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<PackageProjectUrl>https://github.com/Tharga/Toolkit</PackageProjectUrl>
