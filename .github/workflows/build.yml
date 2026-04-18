@@ -191,6 +191,15 @@ jobs:
             $NOTES_FLAG \
             ./artifacts/*.nupkg
 
+      - name: Write release summary
+        run: |
+          {
+            echo "## Released v${{ steps.version.outputs.version }}"
+            echo ""
+            echo "- Tag: [\`${{ steps.version.outputs.version }}\`](https://github.com/${{ github.repository }}/releases/tag/${{ steps.version.outputs.version }})"
+            echo "- NuGet: https://www.nuget.org/packages/Tharga.Runtime/${{ steps.version.outputs.version }}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Comment released version on merged PR
         if: always()
         continue-on-error: true
@@ -269,3 +278,12 @@ jobs:
             --notes "Pre-release from \`${{ github.head_ref }}\` branch." \
             --prerelease \
             ./artifacts/*.nupkg
+
+      - name: Write pre-release summary
+        run: |
+          {
+            echo "## Pre-released v${{ steps.version.outputs.version }}"
+            echo ""
+            echo "- Tag: [\`${{ steps.version.outputs.version }}\`](https://github.com/${{ github.repository }}/releases/tag/${{ steps.version.outputs.version }})"
+            echo "- NuGet: https://www.nuget.org/packages/Tharga.Runtime/${{ steps.version.outputs.version }}"
+          } >> "$GITHUB_STEP_SUMMARY"
