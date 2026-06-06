@@ -1,12 +1,10 @@
 name: Docs
 
 on:
-  push:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
     branches: [master]
-    paths:
-      - 'docs/**'
-      - 'Tharga.Runtime/**.cs'
-      - '.github/workflows/docs.yml'
   workflow_dispatch:
 
 permissions:
@@ -21,6 +19,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - uses: actions/checkout@v4
