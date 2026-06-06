@@ -1,10 +1,10 @@
 # Tharga Runtime
-[![GitHub repo Issues](https://img.shields.io/github/issues/Tharga/Runtime?style=flat&logo=github&logoColor=red&label=Issues)](https://github.com/Tharga/Runtime/issues?q=is%3Aopen)
-
-## .NET
 [![NuGet](https://img.shields.io/nuget/v/Tharga.Runtime)](https://www.nuget.org/packages/Tharga.Runtime)
 ![Nuget](https://img.shields.io/nuget/dt/Tharga.Runtime)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![GitHub repo Issues](https://img.shields.io/github/issues/Tharga/Runtime?style=flat&logo=github&logoColor=red&label=Issues)](https://github.com/Tharga/Runtime/issues?q=is%3Aopen)
+
+**Docs:** [runtime.tharga.net](https://runtime.tharga.net) — guides, API reference, and walkthroughs of the assembly service, filter-based DI, and type helpers.
 
 ## Assembly and TypeService Service
 
