@@ -397,7 +397,3 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /.claude/settings.local.json
-
-# DocFX
-docs/_site/
-docs/api/
