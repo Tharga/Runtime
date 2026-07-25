@@ -1,0 +1,1326 @@
+### YamlMime:ManagedReference
+items:
+- uid: Tharga.Runtime.ServiceCollectionExtensions
+  commentId: T:Tharga.Runtime.ServiceCollectionExtensions
+  id: ServiceCollectionExtensions
+  parent: Tharga.Runtime
+  children:
+  - Tharga.Runtime.ServiceCollectionExtensions.Add(Microsoft.Extensions.DependencyInjection.IServiceCollection,Tharga.Runtime.RegistrationType,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  - Tharga.Runtime.ServiceCollectionExtensions.AddScoped(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  - Tharga.Runtime.ServiceCollectionExtensions.AddScoped``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  - Tharga.Runtime.ServiceCollectionExtensions.AddSingleton(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  - Tharga.Runtime.ServiceCollectionExtensions.AddSingleton``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  - Tharga.Runtime.ServiceCollectionExtensions.AddTransient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  - Tharga.Runtime.ServiceCollectionExtensions.AddTransient``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  - Tharga.Runtime.ServiceCollectionExtensions.Add``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Tharga.Runtime.RegistrationType,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  - Tharga.Runtime.ServiceCollectionExtensions.GetDirectlyImplementedInterfaces(System.Type)
+  - Tharga.Runtime.ServiceCollectionExtensions.GetServiceTypePairs(System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  - Tharga.Runtime.ServiceCollectionExtensions.GetServiceTypePairs``1(System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  - Tharga.Runtime.ServiceCollectionExtensions.IsInterfaceDirectlyImplemented(System.Type,System.Type)
+  langs:
+  - csharp
+  - vb
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: Tharga.Runtime.ServiceCollectionExtensions
+  type: Class
+  source:
+    remote:
+      path: Tharga.Runtime/ServiceCollectionExtensions.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: ServiceCollectionExtensions
+    path: ../Tharga.Runtime/ServiceCollectionExtensions.cs
+    startLine: 5
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  syntax:
+    content: public static class ServiceCollectionExtensions
+    content.vb: Public Module ServiceCollectionExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Tharga.Runtime.ServiceCollectionExtensions.Add(Microsoft.Extensions.DependencyInjection.IServiceCollection,Tharga.Runtime.RegistrationType,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  commentId: M:Tharga.Runtime.ServiceCollectionExtensions.Add(Microsoft.Extensions.DependencyInjection.IServiceCollection,Tharga.Runtime.RegistrationType,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  id: Add(Microsoft.Extensions.DependencyInjection.IServiceCollection,Tharga.Runtime.RegistrationType,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  isExtensionMethod: true
+  parent: Tharga.Runtime.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: Add(IServiceCollection, RegistrationType, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  nameWithType: ServiceCollectionExtensions.Add(IServiceCollection, RegistrationType, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.Add(Microsoft.Extensions.DependencyInjection.IServiceCollection, Tharga.Runtime.RegistrationType, System.Func<System.Reflection.TypeInfo, bool>, System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Reflection.Assembly, bool)
+  type: Method
+  source:
+    remote:
+      path: Tharga.Runtime/ServiceCollectionExtensions.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: Add
+    path: ../Tharga.Runtime/ServiceCollectionExtensions.cs
+    startLine: 18
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  summary: >-
+    Adds registration to the IOC by using a type filter.
+
+    Abstract types and Interfaces are automatically filtered out for implementation.
+
+    A good way is to use the filter in combination with 'IsOfType', then all types based on that type will be found.
+  example: []
+  syntax:
+    content: public static void Add(this IServiceCollection services, RegistrationType registrationType, Func<TypeInfo, bool> filter, IEnumerable<Assembly> assemblies = null, Assembly baseAssembly = null, bool findInterface = true)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    - id: registrationType
+      type: Tharga.Runtime.RegistrationType
+      description: Type of registration as Transient, Scoped or Singleton.
+    - id: filter
+      type: System.Func{System.Reflection.TypeInfo,System.Boolean}
+      description: The actual type filter. Ex. x =&gt; x.IsOfType(typeof(MyService))
+    - id: assemblies
+      type: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+      description: An optional list of assemblies of where to look for types. If not provided the baseAssembly, or default will be used.
+    - id: baseAssembly
+      type: System.Reflection.Assembly
+      description: Provide a base assembly of where to start looking for types. By default, EntryAssembly or ExecutingAssembly will be used.
+    - id: findInterface
+      type: System.Boolean
+      description: If true, interface types will be automatically found based on a concrete type. If false, the concrete type is registered without an interface.
+    content.vb: Public Shared Sub Add(services As IServiceCollection, registrationType As RegistrationType, filter As Func(Of TypeInfo, Boolean), assemblies As IEnumerable(Of Assembly) = Nothing, baseAssembly As Assembly = Nothing, findInterface As Boolean = True)
+  overload: Tharga.Runtime.ServiceCollectionExtensions.Add*
+  nameWithType.vb: ServiceCollectionExtensions.Add(IServiceCollection, RegistrationType, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+  fullName.vb: Tharga.Runtime.ServiceCollectionExtensions.Add(Microsoft.Extensions.DependencyInjection.IServiceCollection, Tharga.Runtime.RegistrationType, System.Func(Of System.Reflection.TypeInfo, Boolean), System.Collections.Generic.IEnumerable(Of System.Reflection.Assembly), System.Reflection.Assembly, Boolean)
+  name.vb: Add(IServiceCollection, RegistrationType, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+- uid: Tharga.Runtime.ServiceCollectionExtensions.Add``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Tharga.Runtime.RegistrationType,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  commentId: M:Tharga.Runtime.ServiceCollectionExtensions.Add``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Tharga.Runtime.RegistrationType,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  id: Add``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Tharga.Runtime.RegistrationType,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  isExtensionMethod: true
+  parent: Tharga.Runtime.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: Add<TServiceBase>(IServiceCollection, RegistrationType, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  nameWithType: ServiceCollectionExtensions.Add<TServiceBase>(IServiceCollection, RegistrationType, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.Add<TServiceBase>(Microsoft.Extensions.DependencyInjection.IServiceCollection, Tharga.Runtime.RegistrationType, System.Func<System.Reflection.TypeInfo, bool>, System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Reflection.Assembly, bool)
+  type: Method
+  source:
+    remote:
+      path: Tharga.Runtime/ServiceCollectionExtensions.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: Add
+    path: ../Tharga.Runtime/ServiceCollectionExtensions.cs
+    startLine: 33
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  summary: Adds registration to the IOC by using a type and optional filter.
+  example: []
+  syntax:
+    content: public static void Add<TServiceBase>(this IServiceCollection services, RegistrationType registrationType, Func<TypeInfo, bool> filter, IEnumerable<Assembly> assemblies = null, Assembly baseAssembly = null, bool findInterface = true)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    - id: registrationType
+      type: Tharga.Runtime.RegistrationType
+      description: Type of registration as Transient, Scoped or Singleton.
+    - id: filter
+      type: System.Func{System.Reflection.TypeInfo,System.Boolean}
+      description: The actual type filter. Ex. x =&gt; x.IsOfType(typeof(MyService))
+    - id: assemblies
+      type: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+      description: An optional list of assemblies of where to look for types. If not provided the baseAssembly, or default will be used.
+    - id: baseAssembly
+      type: System.Reflection.Assembly
+      description: Provide a base assembly of where to start looking for types. By default, EntryAssembly or ExecutingAssembly will be used.
+    - id: findInterface
+      type: System.Boolean
+      description: If true, interface types will be automatically found based on a concrete type. If false, the concrete type is registered without an interface.
+    typeParameters:
+    - id: TServiceBase
+      description: ''
+    content.vb: Public Shared Sub Add(Of TServiceBase)(services As IServiceCollection, registrationType As RegistrationType, filter As Func(Of TypeInfo, Boolean), assemblies As IEnumerable(Of Assembly) = Nothing, baseAssembly As Assembly = Nothing, findInterface As Boolean = True)
+  overload: Tharga.Runtime.ServiceCollectionExtensions.Add*
+  nameWithType.vb: ServiceCollectionExtensions.Add(Of TServiceBase)(IServiceCollection, RegistrationType, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+  fullName.vb: Tharga.Runtime.ServiceCollectionExtensions.Add(Of TServiceBase)(Microsoft.Extensions.DependencyInjection.IServiceCollection, Tharga.Runtime.RegistrationType, System.Func(Of System.Reflection.TypeInfo, Boolean), System.Collections.Generic.IEnumerable(Of System.Reflection.Assembly), System.Reflection.Assembly, Boolean)
+  name.vb: Add(Of TServiceBase)(IServiceCollection, RegistrationType, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+- uid: Tharga.Runtime.ServiceCollectionExtensions.AddTransient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  commentId: M:Tharga.Runtime.ServiceCollectionExtensions.AddTransient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  id: AddTransient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  isExtensionMethod: true
+  parent: Tharga.Runtime.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddTransient(IServiceCollection, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  nameWithType: ServiceCollectionExtensions.AddTransient(IServiceCollection, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.AddTransient(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Func<System.Reflection.TypeInfo, bool>, System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Reflection.Assembly, bool)
+  type: Method
+  source:
+    remote:
+      path: Tharga.Runtime/ServiceCollectionExtensions.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: AddTransient
+    path: ../Tharga.Runtime/ServiceCollectionExtensions.cs
+    startLine: 47
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  summary: Adds transient registration to the IOC by using a type and optional filter.
+  example: []
+  syntax:
+    content: public static void AddTransient(this IServiceCollection services, Func<TypeInfo, bool> filter, IEnumerable<Assembly> assemblies = null, Assembly baseAssembly = null, bool findInterface = true)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    - id: filter
+      type: System.Func{System.Reflection.TypeInfo,System.Boolean}
+      description: The actual type filter. Ex. x =&gt; x.IsOfType(typeof(MyService))
+    - id: assemblies
+      type: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+      description: An optional list of assemblies of where to look for types. If not provided the baseAssembly, or default will be used.
+    - id: baseAssembly
+      type: System.Reflection.Assembly
+      description: Provide a base assembly of where to start looking for types. By default, EntryAssembly or ExecutingAssembly will be used.
+    - id: findInterface
+      type: System.Boolean
+      description: If true, interface types will be automatically found based on a concrete type. If false, the concrete type is registered without an interface.
+    content.vb: Public Shared Sub AddTransient(services As IServiceCollection, filter As Func(Of TypeInfo, Boolean), assemblies As IEnumerable(Of Assembly) = Nothing, baseAssembly As Assembly = Nothing, findInterface As Boolean = True)
+  overload: Tharga.Runtime.ServiceCollectionExtensions.AddTransient*
+  nameWithType.vb: ServiceCollectionExtensions.AddTransient(IServiceCollection, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+  fullName.vb: Tharga.Runtime.ServiceCollectionExtensions.AddTransient(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Func(Of System.Reflection.TypeInfo, Boolean), System.Collections.Generic.IEnumerable(Of System.Reflection.Assembly), System.Reflection.Assembly, Boolean)
+  name.vb: AddTransient(IServiceCollection, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+- uid: Tharga.Runtime.ServiceCollectionExtensions.AddTransient``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  commentId: M:Tharga.Runtime.ServiceCollectionExtensions.AddTransient``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  id: AddTransient``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  isExtensionMethod: true
+  parent: Tharga.Runtime.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddTransient<TServiceBase>(IServiceCollection, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  nameWithType: ServiceCollectionExtensions.AddTransient<TServiceBase>(IServiceCollection, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.AddTransient<TServiceBase>(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Func<System.Reflection.TypeInfo, bool>, System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Reflection.Assembly, bool)
+  type: Method
+  source:
+    remote:
+      path: Tharga.Runtime/ServiceCollectionExtensions.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: AddTransient
+    path: ../Tharga.Runtime/ServiceCollectionExtensions.cs
+    startLine: 61
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  summary: Adds transient registration to the IOC by using a type and optional filter.
+  example: []
+  syntax:
+    content: public static void AddTransient<TServiceBase>(this IServiceCollection services, Func<TypeInfo, bool> filter, IEnumerable<Assembly> assemblies = null, Assembly baseAssembly = null, bool findInterface = true)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    - id: filter
+      type: System.Func{System.Reflection.TypeInfo,System.Boolean}
+      description: The actual type filter. Ex. x =&gt; x.IsOfType(typeof(MyService))
+    - id: assemblies
+      type: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+      description: An optional list of assemblies of where to look for types. If not provided the baseAssembly, or default will be used.
+    - id: baseAssembly
+      type: System.Reflection.Assembly
+      description: Provide a base assembly of where to start looking for types. By default, EntryAssembly or ExecutingAssembly will be used.
+    - id: findInterface
+      type: System.Boolean
+      description: If true, interface types will be automatically found based on a concrete type. If false, the concrete type is registered without an interface.
+    typeParameters:
+    - id: TServiceBase
+      description: ''
+    content.vb: Public Shared Sub AddTransient(Of TServiceBase)(services As IServiceCollection, filter As Func(Of TypeInfo, Boolean), assemblies As IEnumerable(Of Assembly) = Nothing, baseAssembly As Assembly = Nothing, findInterface As Boolean = True)
+  overload: Tharga.Runtime.ServiceCollectionExtensions.AddTransient*
+  nameWithType.vb: ServiceCollectionExtensions.AddTransient(Of TServiceBase)(IServiceCollection, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+  fullName.vb: Tharga.Runtime.ServiceCollectionExtensions.AddTransient(Of TServiceBase)(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Func(Of System.Reflection.TypeInfo, Boolean), System.Collections.Generic.IEnumerable(Of System.Reflection.Assembly), System.Reflection.Assembly, Boolean)
+  name.vb: AddTransient(Of TServiceBase)(IServiceCollection, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+- uid: Tharga.Runtime.ServiceCollectionExtensions.AddScoped(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  commentId: M:Tharga.Runtime.ServiceCollectionExtensions.AddScoped(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  id: AddScoped(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  isExtensionMethod: true
+  parent: Tharga.Runtime.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddScoped(IServiceCollection, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  nameWithType: ServiceCollectionExtensions.AddScoped(IServiceCollection, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.AddScoped(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Func<System.Reflection.TypeInfo, bool>, System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Reflection.Assembly, bool)
+  type: Method
+  source:
+    remote:
+      path: Tharga.Runtime/ServiceCollectionExtensions.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: AddScoped
+    path: ../Tharga.Runtime/ServiceCollectionExtensions.cs
+    startLine: 75
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  summary: Adds scoped registration to the IOC by using a type and optional filter.
+  example: []
+  syntax:
+    content: public static void AddScoped(this IServiceCollection services, Func<TypeInfo, bool> filter, IEnumerable<Assembly> assemblies = null, Assembly baseAssembly = null, bool findInterface = true)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    - id: filter
+      type: System.Func{System.Reflection.TypeInfo,System.Boolean}
+      description: The actual type filter. Ex. x =&gt; x.IsOfType(typeof(MyService))
+    - id: assemblies
+      type: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+      description: An optional list of assemblies of where to look for types. If not provided the baseAssembly, or default will be used.
+    - id: baseAssembly
+      type: System.Reflection.Assembly
+      description: Provide a base assembly of where to start looking for types. By default, EntryAssembly or ExecutingAssembly will be used.
+    - id: findInterface
+      type: System.Boolean
+      description: If true, interface types will be automatically found based on a concrete type. If false, the concrete type is registered without an interface.
+    content.vb: Public Shared Sub AddScoped(services As IServiceCollection, filter As Func(Of TypeInfo, Boolean), assemblies As IEnumerable(Of Assembly) = Nothing, baseAssembly As Assembly = Nothing, findInterface As Boolean = True)
+  overload: Tharga.Runtime.ServiceCollectionExtensions.AddScoped*
+  nameWithType.vb: ServiceCollectionExtensions.AddScoped(IServiceCollection, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+  fullName.vb: Tharga.Runtime.ServiceCollectionExtensions.AddScoped(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Func(Of System.Reflection.TypeInfo, Boolean), System.Collections.Generic.IEnumerable(Of System.Reflection.Assembly), System.Reflection.Assembly, Boolean)
+  name.vb: AddScoped(IServiceCollection, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+- uid: Tharga.Runtime.ServiceCollectionExtensions.AddScoped``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  commentId: M:Tharga.Runtime.ServiceCollectionExtensions.AddScoped``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  id: AddScoped``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  isExtensionMethod: true
+  parent: Tharga.Runtime.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddScoped<TServiceBase>(IServiceCollection, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  nameWithType: ServiceCollectionExtensions.AddScoped<TServiceBase>(IServiceCollection, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.AddScoped<TServiceBase>(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Func<System.Reflection.TypeInfo, bool>, System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Reflection.Assembly, bool)
+  type: Method
+  source:
+    remote:
+      path: Tharga.Runtime/ServiceCollectionExtensions.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: AddScoped
+    path: ../Tharga.Runtime/ServiceCollectionExtensions.cs
+    startLine: 89
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  summary: Adds scoped registration to the IOC by using a type and optional filter.
+  example: []
+  syntax:
+    content: public static void AddScoped<TServiceBase>(this IServiceCollection services, Func<TypeInfo, bool> filter, IEnumerable<Assembly> assemblies = null, Assembly baseAssembly = null, bool findInterface = true)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    - id: filter
+      type: System.Func{System.Reflection.TypeInfo,System.Boolean}
+      description: The actual type filter. Ex. x =&gt; x.IsOfType(typeof(MyService))
+    - id: assemblies
+      type: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+      description: An optional list of assemblies of where to look for types. If not provided the baseAssembly, or default will be used.
+    - id: baseAssembly
+      type: System.Reflection.Assembly
+      description: Provide a base assembly of where to start looking for types. By default, EntryAssembly or ExecutingAssembly will be used.
+    - id: findInterface
+      type: System.Boolean
+      description: If true, interface types will be automatically found based on a concrete type. If false, the concrete type is registered without an interface.
+    typeParameters:
+    - id: TServiceBase
+      description: ''
+    content.vb: Public Shared Sub AddScoped(Of TServiceBase)(services As IServiceCollection, filter As Func(Of TypeInfo, Boolean), assemblies As IEnumerable(Of Assembly) = Nothing, baseAssembly As Assembly = Nothing, findInterface As Boolean = True)
+  overload: Tharga.Runtime.ServiceCollectionExtensions.AddScoped*
+  nameWithType.vb: ServiceCollectionExtensions.AddScoped(Of TServiceBase)(IServiceCollection, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+  fullName.vb: Tharga.Runtime.ServiceCollectionExtensions.AddScoped(Of TServiceBase)(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Func(Of System.Reflection.TypeInfo, Boolean), System.Collections.Generic.IEnumerable(Of System.Reflection.Assembly), System.Reflection.Assembly, Boolean)
+  name.vb: AddScoped(Of TServiceBase)(IServiceCollection, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+- uid: Tharga.Runtime.ServiceCollectionExtensions.AddSingleton(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  commentId: M:Tharga.Runtime.ServiceCollectionExtensions.AddSingleton(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  id: AddSingleton(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  isExtensionMethod: true
+  parent: Tharga.Runtime.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddSingleton(IServiceCollection, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  nameWithType: ServiceCollectionExtensions.AddSingleton(IServiceCollection, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.AddSingleton(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Func<System.Reflection.TypeInfo, bool>, System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Reflection.Assembly, bool)
+  type: Method
+  source:
+    remote:
+      path: Tharga.Runtime/ServiceCollectionExtensions.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: AddSingleton
+    path: ../Tharga.Runtime/ServiceCollectionExtensions.cs
+    startLine: 103
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  summary: Adds singleton registration to the IOC by using a type and optional filter.
+  example: []
+  syntax:
+    content: public static void AddSingleton(this IServiceCollection services, Func<TypeInfo, bool> filter, IEnumerable<Assembly> assemblies = null, Assembly baseAssembly = null, bool findInterface = true)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    - id: filter
+      type: System.Func{System.Reflection.TypeInfo,System.Boolean}
+      description: The actual type filter. Ex. x =&gt; x.IsOfType(typeof(MyService))
+    - id: assemblies
+      type: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+      description: An optional list of assemblies of where to look for types. If not provided the baseAssembly, or default will be used.
+    - id: baseAssembly
+      type: System.Reflection.Assembly
+      description: Provide a base assembly of where to start looking for types. By default, EntryAssembly or ExecutingAssembly will be used.
+    - id: findInterface
+      type: System.Boolean
+      description: If true, interface types will be automatically found based on a concrete type. If false, the concrete type is registered without an interface.
+    content.vb: Public Shared Sub AddSingleton(services As IServiceCollection, filter As Func(Of TypeInfo, Boolean), assemblies As IEnumerable(Of Assembly) = Nothing, baseAssembly As Assembly = Nothing, findInterface As Boolean = True)
+  overload: Tharga.Runtime.ServiceCollectionExtensions.AddSingleton*
+  nameWithType.vb: ServiceCollectionExtensions.AddSingleton(IServiceCollection, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+  fullName.vb: Tharga.Runtime.ServiceCollectionExtensions.AddSingleton(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Func(Of System.Reflection.TypeInfo, Boolean), System.Collections.Generic.IEnumerable(Of System.Reflection.Assembly), System.Reflection.Assembly, Boolean)
+  name.vb: AddSingleton(IServiceCollection, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+- uid: Tharga.Runtime.ServiceCollectionExtensions.AddSingleton``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  commentId: M:Tharga.Runtime.ServiceCollectionExtensions.AddSingleton``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  id: AddSingleton``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  isExtensionMethod: true
+  parent: Tharga.Runtime.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddSingleton<TServiceBase>(IServiceCollection, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  nameWithType: ServiceCollectionExtensions.AddSingleton<TServiceBase>(IServiceCollection, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.AddSingleton<TServiceBase>(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Func<System.Reflection.TypeInfo, bool>, System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Reflection.Assembly, bool)
+  type: Method
+  source:
+    remote:
+      path: Tharga.Runtime/ServiceCollectionExtensions.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: AddSingleton
+    path: ../Tharga.Runtime/ServiceCollectionExtensions.cs
+    startLine: 117
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  summary: Adds singleton registration to the IOC by using a type and optional filter.
+  example: []
+  syntax:
+    content: public static void AddSingleton<TServiceBase>(this IServiceCollection services, Func<TypeInfo, bool> filter, IEnumerable<Assembly> assemblies = null, Assembly baseAssembly = null, bool findInterface = true)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    - id: filter
+      type: System.Func{System.Reflection.TypeInfo,System.Boolean}
+      description: The actual type filter. Ex. x =&gt; x.IsOfType(typeof(MyService))
+    - id: assemblies
+      type: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+      description: An optional list of assemblies of where to look for types. If not provided the baseAssembly, or default will be used.
+    - id: baseAssembly
+      type: System.Reflection.Assembly
+      description: Provide a base assembly of where to start looking for types. By default, EntryAssembly or ExecutingAssembly will be used.
+    - id: findInterface
+      type: System.Boolean
+      description: If true, interface types will be automatically found based on a concrete type. If false, the concrete type is registered without an interface.
+    typeParameters:
+    - id: TServiceBase
+      description: ''
+    content.vb: Public Shared Sub AddSingleton(Of TServiceBase)(services As IServiceCollection, filter As Func(Of TypeInfo, Boolean), assemblies As IEnumerable(Of Assembly) = Nothing, baseAssembly As Assembly = Nothing, findInterface As Boolean = True)
+  overload: Tharga.Runtime.ServiceCollectionExtensions.AddSingleton*
+  nameWithType.vb: ServiceCollectionExtensions.AddSingleton(Of TServiceBase)(IServiceCollection, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+  fullName.vb: Tharga.Runtime.ServiceCollectionExtensions.AddSingleton(Of TServiceBase)(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Func(Of System.Reflection.TypeInfo, Boolean), System.Collections.Generic.IEnumerable(Of System.Reflection.Assembly), System.Reflection.Assembly, Boolean)
+  name.vb: AddSingleton(Of TServiceBase)(IServiceCollection, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+- uid: Tharga.Runtime.ServiceCollectionExtensions.GetServiceTypePairs``1(System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  commentId: M:Tharga.Runtime.ServiceCollectionExtensions.GetServiceTypePairs``1(System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  id: GetServiceTypePairs``1(System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  parent: Tharga.Runtime.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetServiceTypePairs<TServiceBase>(Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  nameWithType: ServiceCollectionExtensions.GetServiceTypePairs<TServiceBase>(Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.GetServiceTypePairs<TServiceBase>(System.Func<System.Reflection.TypeInfo, bool>, System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Reflection.Assembly, bool)
+  type: Method
+  source:
+    remote:
+      path: Tharga.Runtime/ServiceCollectionExtensions.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: GetServiceTypePairs
+    path: ../Tharga.Runtime/ServiceCollectionExtensions.cs
+    startLine: 132
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  summary: Returns pairs with service types and implementation types. For service type an interface is returned, if there is one, otherwise the implementation is returned.
+  example: []
+  syntax:
+    content: public static IEnumerable<(Type ServiceType, Type ImplementationType)> GetServiceTypePairs<TServiceBase>(Func<TypeInfo, bool> filter, IEnumerable<Assembly> assemblies = null, Assembly baseAssembly = null, bool findInterface = true)
+    parameters:
+    - id: filter
+      type: System.Func{System.Reflection.TypeInfo,System.Boolean}
+      description: The actual type filter. Ex. x =&gt; x.IsOfType(typeof(MyService))
+    - id: assemblies
+      type: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+      description: An optional list of assemblies of where to look for types. If not provided the baseAssembly, or default will be used.
+    - id: baseAssembly
+      type: System.Reflection.Assembly
+      description: Provide a base assembly of where to start looking for types. By default, EntryAssembly or ExecutingAssembly will be used.
+    - id: findInterface
+      type: System.Boolean
+      description: If true, interface types will be automatically found based on a concrete type. If false, the concrete type is registered without an interface.
+    typeParameters:
+    - id: TServiceBase
+      description: ''
+    return:
+      type: System.Collections.Generic.IEnumerable{System.ValueTuple{System.Type,System.Type}}
+      description: ''
+    content.vb: Public Shared Function GetServiceTypePairs(Of TServiceBase)(filter As Func(Of TypeInfo, Boolean), assemblies As IEnumerable(Of Assembly) = Nothing, baseAssembly As Assembly = Nothing, findInterface As Boolean = True) As IEnumerable(Of (ServiceType As Type, ImplementationType As Type))
+  overload: Tharga.Runtime.ServiceCollectionExtensions.GetServiceTypePairs*
+  nameWithType.vb: ServiceCollectionExtensions.GetServiceTypePairs(Of TServiceBase)(Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+  fullName.vb: Tharga.Runtime.ServiceCollectionExtensions.GetServiceTypePairs(Of TServiceBase)(System.Func(Of System.Reflection.TypeInfo, Boolean), System.Collections.Generic.IEnumerable(Of System.Reflection.Assembly), System.Reflection.Assembly, Boolean)
+  name.vb: GetServiceTypePairs(Of TServiceBase)(Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+- uid: Tharga.Runtime.ServiceCollectionExtensions.GetServiceTypePairs(System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  commentId: M:Tharga.Runtime.ServiceCollectionExtensions.GetServiceTypePairs(System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  id: GetServiceTypePairs(System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly,System.Boolean)
+  parent: Tharga.Runtime.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetServiceTypePairs(Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  nameWithType: ServiceCollectionExtensions.GetServiceTypePairs(Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly, bool)
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.GetServiceTypePairs(System.Func<System.Reflection.TypeInfo, bool>, System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Reflection.Assembly, bool)
+  type: Method
+  source:
+    remote:
+      path: Tharga.Runtime/ServiceCollectionExtensions.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: GetServiceTypePairs
+    path: ../Tharga.Runtime/ServiceCollectionExtensions.cs
+    startLine: 146
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  summary: Returns pairs with service types and implementation types. For service type an interface is returned, if there is one, otherwise the implementation is returned.
+  example: []
+  syntax:
+    content: public static IEnumerable<(Type ServiceType, Type ImplementationType)> GetServiceTypePairs(Func<TypeInfo, bool> filter, IEnumerable<Assembly> assemblies = null, Assembly baseAssembly = null, bool findInterface = true)
+    parameters:
+    - id: filter
+      type: System.Func{System.Reflection.TypeInfo,System.Boolean}
+      description: The actual type filter. Ex. x =&gt; x.IsOfType(typeof(MyService))
+    - id: assemblies
+      type: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+      description: An optional list of assemblies of where to look for types. If not provided the baseAssembly, or default will be used.
+    - id: baseAssembly
+      type: System.Reflection.Assembly
+      description: Provide a base assembly of where to start looking for types. By default, EntryAssembly or ExecutingAssembly will be used.
+    - id: findInterface
+      type: System.Boolean
+      description: If true, interface types will be automatically found based on a concrete type. If false, the concrete type is registered without an interface.
+    return:
+      type: System.Collections.Generic.IEnumerable{System.ValueTuple{System.Type,System.Type}}
+      description: ''
+    content.vb: Public Shared Function GetServiceTypePairs(filter As Func(Of TypeInfo, Boolean), assemblies As IEnumerable(Of Assembly) = Nothing, baseAssembly As Assembly = Nothing, findInterface As Boolean = True) As IEnumerable(Of (ServiceType As Type, ImplementationType As Type))
+  overload: Tharga.Runtime.ServiceCollectionExtensions.GetServiceTypePairs*
+  nameWithType.vb: ServiceCollectionExtensions.GetServiceTypePairs(Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+  fullName.vb: Tharga.Runtime.ServiceCollectionExtensions.GetServiceTypePairs(System.Func(Of System.Reflection.TypeInfo, Boolean), System.Collections.Generic.IEnumerable(Of System.Reflection.Assembly), System.Reflection.Assembly, Boolean)
+  name.vb: GetServiceTypePairs(Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly, Boolean)
+- uid: Tharga.Runtime.ServiceCollectionExtensions.GetDirectlyImplementedInterfaces(System.Type)
+  commentId: M:Tharga.Runtime.ServiceCollectionExtensions.GetDirectlyImplementedInterfaces(System.Type)
+  id: GetDirectlyImplementedInterfaces(System.Type)
+  isExtensionMethod: true
+  parent: Tharga.Runtime.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetDirectlyImplementedInterfaces(Type)
+  nameWithType: ServiceCollectionExtensions.GetDirectlyImplementedInterfaces(Type)
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.GetDirectlyImplementedInterfaces(System.Type)
+  type: Method
+  source:
+    remote:
+      path: Tharga.Runtime/ServiceCollectionExtensions.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: GetDirectlyImplementedInterfaces
+    path: ../Tharga.Runtime/ServiceCollectionExtensions.cs
+    startLine: 202
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  summary: Returnes interfaces that direcly implements a type. If the interface is inherited it is not returned.
+  example: []
+  syntax:
+    content: public static Type[] GetDirectlyImplementedInterfaces(this Type type)
+    parameters:
+    - id: type
+      type: System.Type
+      description: ''
+    return:
+      type: System.Type[]
+      description: ''
+    content.vb: Public Shared Function GetDirectlyImplementedInterfaces(type As Type) As Type()
+  overload: Tharga.Runtime.ServiceCollectionExtensions.GetDirectlyImplementedInterfaces*
+- uid: Tharga.Runtime.ServiceCollectionExtensions.IsInterfaceDirectlyImplemented(System.Type,System.Type)
+  commentId: M:Tharga.Runtime.ServiceCollectionExtensions.IsInterfaceDirectlyImplemented(System.Type,System.Type)
+  id: IsInterfaceDirectlyImplemented(System.Type,System.Type)
+  isExtensionMethod: true
+  parent: Tharga.Runtime.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: IsInterfaceDirectlyImplemented(Type, Type)
+  nameWithType: ServiceCollectionExtensions.IsInterfaceDirectlyImplemented(Type, Type)
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.IsInterfaceDirectlyImplemented(System.Type, System.Type)
+  type: Method
+  source:
+    remote:
+      path: Tharga.Runtime/ServiceCollectionExtensions.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: IsInterfaceDirectlyImplemented
+    path: ../Tharga.Runtime/ServiceCollectionExtensions.cs
+    startLine: 215
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  summary: >-
+    Checks if an interface is directly implemented by a type.
+
+    If the type does not implement the interface or it is inherited, the method returns false.
+  example: []
+  syntax:
+    content: public static bool IsInterfaceDirectlyImplemented(this Type type, Type typeInterface)
+    parameters:
+    - id: type
+      type: System.Type
+      description: ''
+    - id: typeInterface
+      type: System.Type
+      description: ''
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public Shared Function IsInterfaceDirectlyImplemented(type As Type, typeInterface As Type) As Boolean
+  overload: Tharga.Runtime.ServiceCollectionExtensions.IsInterfaceDirectlyImplemented*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: ''
+references:
+- uid: Tharga.Runtime
+  commentId: N:Tharga.Runtime
+  href: Tharga.html
+  name: Tharga.Runtime
+  nameWithType: Tharga.Runtime
+  fullName: Tharga.Runtime
+  spec.csharp:
+  - uid: Tharga
+    name: Tharga
+    href: Tharga.html
+  - name: .
+  - uid: Tharga.Runtime
+    name: Runtime
+    href: Tharga.Runtime.html
+  spec.vb:
+  - uid: Tharga
+    name: Tharga
+    href: Tharga.html
+  - name: .
+  - uid: Tharga.Runtime
+    name: Runtime
+    href: Tharga.Runtime.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Tharga.Runtime.ServiceCollectionExtensions.Add*
+  commentId: Overload:Tharga.Runtime.ServiceCollectionExtensions.Add
+  href: Tharga.Runtime.ServiceCollectionExtensions.html#Tharga_Runtime_ServiceCollectionExtensions_Add_Microsoft_Extensions_DependencyInjection_IServiceCollection_Tharga_Runtime_RegistrationType_System_Func_System_Reflection_TypeInfo_System_Boolean__System_Collections_Generic_IEnumerable_System_Reflection_Assembly__System_Reflection_Assembly_System_Boolean_
+  name: Add
+  nameWithType: ServiceCollectionExtensions.Add
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.Add
+- uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
+  commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
+  parent: Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: Microsoft.Extensions.DependencyInjection.IServiceCollection
+- uid: Tharga.Runtime.RegistrationType
+  commentId: T:Tharga.Runtime.RegistrationType
+  parent: Tharga.Runtime
+  href: Tharga.Runtime.RegistrationType.html
+  name: RegistrationType
+  nameWithType: RegistrationType
+  fullName: Tharga.Runtime.RegistrationType
+- uid: System.Func{System.Reflection.TypeInfo,System.Boolean}
+  commentId: T:System.Func{System.Reflection.TypeInfo,System.Boolean}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<TypeInfo, bool>
+  nameWithType: Func<TypeInfo, bool>
+  fullName: System.Func<System.Reflection.TypeInfo, bool>
+  nameWithType.vb: Func(Of TypeInfo, Boolean)
+  fullName.vb: System.Func(Of System.Reflection.TypeInfo, Boolean)
+  name.vb: Func(Of TypeInfo, Boolean)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Reflection.TypeInfo
+    name: TypeInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.typeinfo
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Reflection.TypeInfo
+    name: TypeInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.typeinfo
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Assembly>
+  nameWithType: IEnumerable<Assembly>
+  fullName: System.Collections.Generic.IEnumerable<System.Reflection.Assembly>
+  nameWithType.vb: IEnumerable(Of Assembly)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Reflection.Assembly)
+  name.vb: IEnumerable(Of Assembly)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Reflection.Assembly
+    name: Assembly
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.assembly
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Reflection.Assembly
+    name: Assembly
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.assembly
+  - name: )
+- uid: System.Reflection.Assembly
+  commentId: T:System.Reflection.Assembly
+  parent: System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.reflection.assembly
+  name: Assembly
+  nameWithType: Assembly
+  fullName: System.Reflection.Assembly
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Microsoft.Extensions.DependencyInjection
+  commentId: N:Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.DependencyInjection
+  nameWithType: Microsoft.Extensions.DependencyInjection
+  fullName: Microsoft.Extensions.DependencyInjection
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.DependencyInjection
+    name: DependencyInjection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.DependencyInjection
+    name: DependencyInjection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Reflection
+  commentId: N:System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Reflection
+  nameWithType: System.Reflection
+  fullName: System.Reflection
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+- uid: Tharga.Runtime.ServiceCollectionExtensions.AddTransient*
+  commentId: Overload:Tharga.Runtime.ServiceCollectionExtensions.AddTransient
+  href: Tharga.Runtime.ServiceCollectionExtensions.html#Tharga_Runtime_ServiceCollectionExtensions_AddTransient_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Func_System_Reflection_TypeInfo_System_Boolean__System_Collections_Generic_IEnumerable_System_Reflection_Assembly__System_Reflection_Assembly_System_Boolean_
+  name: AddTransient
+  nameWithType: ServiceCollectionExtensions.AddTransient
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.AddTransient
+- uid: Tharga.Runtime.ServiceCollectionExtensions.AddScoped*
+  commentId: Overload:Tharga.Runtime.ServiceCollectionExtensions.AddScoped
+  href: Tharga.Runtime.ServiceCollectionExtensions.html#Tharga_Runtime_ServiceCollectionExtensions_AddScoped_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Func_System_Reflection_TypeInfo_System_Boolean__System_Collections_Generic_IEnumerable_System_Reflection_Assembly__System_Reflection_Assembly_System_Boolean_
+  name: AddScoped
+  nameWithType: ServiceCollectionExtensions.AddScoped
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.AddScoped
+- uid: Tharga.Runtime.ServiceCollectionExtensions.AddSingleton*
+  commentId: Overload:Tharga.Runtime.ServiceCollectionExtensions.AddSingleton
+  href: Tharga.Runtime.ServiceCollectionExtensions.html#Tharga_Runtime_ServiceCollectionExtensions_AddSingleton_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Func_System_Reflection_TypeInfo_System_Boolean__System_Collections_Generic_IEnumerable_System_Reflection_Assembly__System_Reflection_Assembly_System_Boolean_
+  name: AddSingleton
+  nameWithType: ServiceCollectionExtensions.AddSingleton
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.AddSingleton
+- uid: Tharga.Runtime.ServiceCollectionExtensions.GetServiceTypePairs*
+  commentId: Overload:Tharga.Runtime.ServiceCollectionExtensions.GetServiceTypePairs
+  href: Tharga.Runtime.ServiceCollectionExtensions.html#Tharga_Runtime_ServiceCollectionExtensions_GetServiceTypePairs__1_System_Func_System_Reflection_TypeInfo_System_Boolean__System_Collections_Generic_IEnumerable_System_Reflection_Assembly__System_Reflection_Assembly_System_Boolean_
+  name: GetServiceTypePairs
+  nameWithType: ServiceCollectionExtensions.GetServiceTypePairs
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.GetServiceTypePairs
+- uid: System.Collections.Generic.IEnumerable{System.ValueTuple{System.Type,System.Type}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.ValueTuple{System.Type,System.Type}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<(Type ServiceType, Type ImplementationType)>
+  nameWithType: IEnumerable<(Type ServiceType, Type ImplementationType)>
+  fullName: System.Collections.Generic.IEnumerable<(System.Type ServiceType, System.Type ImplementationType)>
+  nameWithType.vb: IEnumerable(Of (ServiceType As Type, ImplementationType As Type))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of (ServiceType As System.Type, ImplementationType As System.Type))
+  name.vb: IEnumerable(Of (ServiceType As Type, ImplementationType As Type))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: " "
+  - uid: System.ValueTuple{System.Type,System.Type}.ServiceType
+    name: ServiceType
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.type,system.type-.servicetype
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: " "
+  - uid: System.ValueTuple{System.Type,System.Type}.ImplementationType
+    name: ImplementationType
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.type,system.type-.implementationtype
+  - name: )
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: (
+  - uid: System.ValueTuple{System.Type,System.Type}.ServiceType
+    name: ServiceType
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.type,system.type-.servicetype
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Type,System.Type}.ImplementationType
+    name: ImplementationType
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.type,system.type-.implementationtype
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  - name: )
+- uid: Tharga.Runtime.ServiceCollectionExtensions.GetDirectlyImplementedInterfaces*
+  commentId: Overload:Tharga.Runtime.ServiceCollectionExtensions.GetDirectlyImplementedInterfaces
+  href: Tharga.Runtime.ServiceCollectionExtensions.html#Tharga_Runtime_ServiceCollectionExtensions_GetDirectlyImplementedInterfaces_System_Type_
+  name: GetDirectlyImplementedInterfaces
+  nameWithType: ServiceCollectionExtensions.GetDirectlyImplementedInterfaces
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.GetDirectlyImplementedInterfaces
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.Type[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type[]
+  nameWithType: Type[]
+  fullName: System.Type[]
+  nameWithType.vb: Type()
+  fullName.vb: System.Type()
+  name.vb: Type()
+  spec.csharp:
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: (
+  - name: )
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: Tharga.Runtime.ServiceCollectionExtensions.IsInterfaceDirectlyImplemented*
+  commentId: Overload:Tharga.Runtime.ServiceCollectionExtensions.IsInterfaceDirectlyImplemented
+  href: Tharga.Runtime.ServiceCollectionExtensions.html#Tharga_Runtime_ServiceCollectionExtensions_IsInterfaceDirectlyImplemented_System_Type_System_Type_
+  name: IsInterfaceDirectlyImplemented
+  nameWithType: ServiceCollectionExtensions.IsInterfaceDirectlyImplemented
+  fullName: Tharga.Runtime.ServiceCollectionExtensions.IsInterfaceDirectlyImplemented

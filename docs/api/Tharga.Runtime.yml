@@ -1,0 +1,82 @@
+### YamlMime:ManagedReference
+items:
+- uid: Tharga.Runtime
+  commentId: N:Tharga.Runtime
+  id: Tharga.Runtime
+  children:
+  - Tharga.Runtime.AssemblyService
+  - Tharga.Runtime.IAssemblyService
+  - Tharga.Runtime.RegistrationType
+  - Tharga.Runtime.ServiceCollectionExtensions
+  - Tharga.Runtime.TypeExtensions
+  - Tharga.Runtime.TypeMissingException
+  langs:
+  - csharp
+  - vb
+  name: Tharga.Runtime
+  nameWithType: Tharga.Runtime
+  fullName: Tharga.Runtime
+  type: Namespace
+  assemblies:
+  - Tharga.Runtime
+references:
+- uid: Tharga.Runtime.AssemblyService
+  commentId: T:Tharga.Runtime.AssemblyService
+  href: Tharga.Runtime.AssemblyService.html
+  name: AssemblyService
+  nameWithType: AssemblyService
+  fullName: Tharga.Runtime.AssemblyService
+- uid: Tharga.Runtime.IAssemblyService
+  commentId: T:Tharga.Runtime.IAssemblyService
+  parent: Tharga.Runtime
+  href: Tharga.Runtime.IAssemblyService.html
+  name: IAssemblyService
+  nameWithType: IAssemblyService
+  fullName: Tharga.Runtime.IAssemblyService
+- uid: Tharga.Runtime.RegistrationType
+  commentId: T:Tharga.Runtime.RegistrationType
+  parent: Tharga.Runtime
+  href: Tharga.Runtime.RegistrationType.html
+  name: RegistrationType
+  nameWithType: RegistrationType
+  fullName: Tharga.Runtime.RegistrationType
+- uid: Tharga.Runtime.ServiceCollectionExtensions
+  commentId: T:Tharga.Runtime.ServiceCollectionExtensions
+  href: Tharga.Runtime.ServiceCollectionExtensions.html
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: Tharga.Runtime.ServiceCollectionExtensions
+- uid: Tharga.Runtime.TypeExtensions
+  commentId: T:Tharga.Runtime.TypeExtensions
+  href: Tharga.Runtime.TypeExtensions.html
+  name: TypeExtensions
+  nameWithType: TypeExtensions
+  fullName: Tharga.Runtime.TypeExtensions
+- uid: Tharga.Runtime.TypeMissingException
+  commentId: T:Tharga.Runtime.TypeMissingException
+  href: Tharga.Runtime.TypeMissingException.html
+  name: TypeMissingException
+  nameWithType: TypeMissingException
+  fullName: Tharga.Runtime.TypeMissingException
+- uid: Tharga.Runtime
+  commentId: N:Tharga.Runtime
+  href: Tharga.html
+  name: Tharga.Runtime
+  nameWithType: Tharga.Runtime
+  fullName: Tharga.Runtime
+  spec.csharp:
+  - uid: Tharga
+    name: Tharga
+    href: Tharga.html
+  - name: .
+  - uid: Tharga.Runtime
+    name: Runtime
+    href: Tharga.Runtime.html
+  spec.vb:
+  - uid: Tharga
+    name: Tharga
+    href: Tharga.html
+  - name: .
+  - uid: Tharga.Runtime
+    name: Runtime
+    href: Tharga.Runtime.html

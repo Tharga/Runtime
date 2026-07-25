@@ -1,0 +1,25 @@
+### YamlMime:TableOfContent
+items:
+- uid: Tharga.Runtime
+  name: Tharga.Runtime
+  type: Namespace
+  items:
+  - uid: Tharga.Runtime.AssemblyService
+    name: AssemblyService
+    type: Class
+  - uid: Tharga.Runtime.IAssemblyService
+    name: IAssemblyService
+    type: Interface
+  - uid: Tharga.Runtime.RegistrationType
+    name: RegistrationType
+    type: Enum
+  - uid: Tharga.Runtime.ServiceCollectionExtensions
+    name: ServiceCollectionExtensions
+    type: Class
+  - uid: Tharga.Runtime.TypeExtensions
+    name: TypeExtensions
+    type: Class
+  - uid: Tharga.Runtime.TypeMissingException
+    name: TypeMissingException
+    type: Class
+memberLayout: SamePage

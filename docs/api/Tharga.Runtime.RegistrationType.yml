@@ -1,0 +1,139 @@
+### YamlMime:ManagedReference
+items:
+- uid: Tharga.Runtime.RegistrationType
+  commentId: T:Tharga.Runtime.RegistrationType
+  id: RegistrationType
+  parent: Tharga.Runtime
+  children:
+  - Tharga.Runtime.RegistrationType.Scoped
+  - Tharga.Runtime.RegistrationType.Singleton
+  - Tharga.Runtime.RegistrationType.Transient
+  langs:
+  - csharp
+  - vb
+  name: RegistrationType
+  nameWithType: RegistrationType
+  fullName: Tharga.Runtime.RegistrationType
+  type: Enum
+  source:
+    remote:
+      path: Tharga.Runtime/RegistrationType.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: RegistrationType
+    path: ../Tharga.Runtime/RegistrationType.cs
+    startLine: 2
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  syntax:
+    content: public enum RegistrationType
+    content.vb: Public Enum RegistrationType
+- uid: Tharga.Runtime.RegistrationType.Transient
+  commentId: F:Tharga.Runtime.RegistrationType.Transient
+  id: Transient
+  parent: Tharga.Runtime.RegistrationType
+  langs:
+  - csharp
+  - vb
+  name: Transient
+  nameWithType: RegistrationType.Transient
+  fullName: Tharga.Runtime.RegistrationType.Transient
+  type: Field
+  source:
+    remote:
+      path: Tharga.Runtime/RegistrationType.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: Transient
+    path: ../Tharga.Runtime/RegistrationType.cs
+    startLine: 2
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  syntax:
+    content: Transient = 0
+    return:
+      type: Tharga.Runtime.RegistrationType
+- uid: Tharga.Runtime.RegistrationType.Scoped
+  commentId: F:Tharga.Runtime.RegistrationType.Scoped
+  id: Scoped
+  parent: Tharga.Runtime.RegistrationType
+  langs:
+  - csharp
+  - vb
+  name: Scoped
+  nameWithType: RegistrationType.Scoped
+  fullName: Tharga.Runtime.RegistrationType.Scoped
+  type: Field
+  source:
+    remote:
+      path: Tharga.Runtime/RegistrationType.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: Scoped
+    path: ../Tharga.Runtime/RegistrationType.cs
+    startLine: 2
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  syntax:
+    content: Scoped = 1
+    return:
+      type: Tharga.Runtime.RegistrationType
+- uid: Tharga.Runtime.RegistrationType.Singleton
+  commentId: F:Tharga.Runtime.RegistrationType.Singleton
+  id: Singleton
+  parent: Tharga.Runtime.RegistrationType
+  langs:
+  - csharp
+  - vb
+  name: Singleton
+  nameWithType: RegistrationType.Singleton
+  fullName: Tharga.Runtime.RegistrationType.Singleton
+  type: Field
+  source:
+    remote:
+      path: Tharga.Runtime/RegistrationType.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: Singleton
+    path: ../Tharga.Runtime/RegistrationType.cs
+    startLine: 2
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  syntax:
+    content: Singleton = 2
+    return:
+      type: Tharga.Runtime.RegistrationType
+references:
+- uid: Tharga.Runtime
+  commentId: N:Tharga.Runtime
+  href: Tharga.html
+  name: Tharga.Runtime
+  nameWithType: Tharga.Runtime
+  fullName: Tharga.Runtime
+  spec.csharp:
+  - uid: Tharga
+    name: Tharga
+    href: Tharga.html
+  - name: .
+  - uid: Tharga.Runtime
+    name: Runtime
+    href: Tharga.Runtime.html
+  spec.vb:
+  - uid: Tharga
+    name: Tharga
+    href: Tharga.html
+  - name: .
+  - uid: Tharga.Runtime
+    name: Runtime
+    href: Tharga.Runtime.html
+- uid: Tharga.Runtime.RegistrationType
+  commentId: T:Tharga.Runtime.RegistrationType
+  parent: Tharga.Runtime
+  href: Tharga.Runtime.RegistrationType.html
+  name: RegistrationType
+  nameWithType: RegistrationType
+  fullName: Tharga.Runtime.RegistrationType

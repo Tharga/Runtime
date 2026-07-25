@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Type extensions | Tharga.Runtime </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Type extensions | Tharga.Runtime ">
+      
+      
+      <link rel="icon" href="https://thargelion.net/assets/component-runtime.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Tharga/Runtime/blob/master/docs/articles/type-extensions.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="https://thargelion.net/assets/component-runtime.png" alt="Tharga.Runtime">
+            Tharga.Runtime
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="type-extensions">Type extensions</h1>
+
+<p>A small set of <code>Type</code> and <code>TypeInfo</code> helpers used by the rest of <code>Tharga.Runtime</code> and exposed for direct use.</p>
+<h2 id="isoftype"><code>IsOfType</code></h2>
+<pre><code class="lang-csharp">bool IsOfType&lt;T&gt;(this Type item);
+bool IsOfType(this Type item, Type type);
+</code></pre>
+<p>Returns <code>true</code> if <code>item</code> is, inherits from, or implements <code>type</code>. Walks the base-type chain and implemented interfaces. Comparison strips generic argument differences (<code>List&lt;int&gt;</code> matches <code>List&lt;&gt;</code>).</p>
+<pre><code class="lang-csharp">typeof(OrderHandler).IsOfType&lt;IHandler&gt;();   // true
+typeof(List&lt;int&gt;).IsOfType(typeof(IList&lt;&gt;)); // true
+</code></pre>
+<p>Used as the primary building block for <a href="service-registration.html">DI filters</a> and <a href="assembly-service.html">assembly scans</a>.</p>
+<h2 id="getdirectlyimplementedinterfaces"><code>GetDirectlyImplementedInterfaces</code></h2>
+<pre><code class="lang-csharp">Type[] GetDirectlyImplementedInterfaces(this Type type);
+</code></pre>
+<p>Returns only the interfaces declared on <code>type</code> itself — interfaces inherited via another interface are excluded.</p>
+<pre><code class="lang-csharp">public interface IBase { }
+public interface IDerived : IBase { }
+public class Impl : IDerived { }
+
+typeof(Impl).GetInterfaces();                       // [IDerived, IBase]
+typeof(Impl).GetDirectlyImplementedInterfaces();    // [IDerived]
+</code></pre>
+<h2 id="isinterfacedirectlyimplemented"><code>IsInterfaceDirectlyImplemented</code></h2>
+<pre><code class="lang-csharp">bool IsInterfaceDirectlyImplemented(this Type type, Type typeInterface);
+</code></pre>
+<p>Returns <code>true</code> if <code>typeInterface</code> is declared directly on <code>type</code>, not inherited via another interface. Throws <code>ArgumentException</code> if <code>typeInterface</code> is not an interface.</p>
+<p>Used by the DI registration code so that <code>Impl : IDerived</code> registers only against <code>IDerived</code> — not also against the inherited <code>IBase</code>.</p>
+<h2 id="toassemblyqualifiednamewithoutversion"><code>ToAssemblyQualifiedNameWithoutVersion</code></h2>
+<pre><code class="lang-csharp">string ToAssemblyQualifiedNameWithoutVersion(this Type type);
+</code></pre>
+<p>Returns <code>&quot;Namespace.Type, Assembly.Name&quot;</code> — the assembly-qualified name with <code>Version=</code>, <code>Culture=</code>, and <code>PublicKeyToken=</code> stripped. Useful for serializing type references that need to survive assembly version bumps.</p>
+<pre><code class="lang-csharp">typeof(MyType).ToAssemblyQualifiedNameWithoutVersion();
+// &quot;MyApp.MyType, MyApp&quot;
+</code></pre>
+<h2 id="gettypestring--version-tolerant"><code>GetType(string)</code> — version-tolerant</h2>
+<pre><code class="lang-csharp">Type GetType(string typeName);
+</code></pre>
+<p>Wraps <code>Type.GetType(string)</code> with a fallback: tries the provided assembly-qualified name first with <code>Version=1.0.0.0</code> substituted in, then with whatever version is in the string. Throws <code>TypeMissingException</code> if the type can't be resolved.</p>
+<p>This is intentionally forgiving — designed for loading types from configuration or stored data where the recorded version may no longer match the loaded one.</p>
+<h2 id="hasgenericparameter"><code>HasGenericParameter</code></h2>
+<pre><code class="lang-csharp">bool HasGenericParameter(this TypeInfo type, Type aggregatorType);
+</code></pre>
+<p>Walks <code>type</code>'s base-type and interface chain looking for a generic type, then checks whether the first generic argument is <code>aggregatorType</code>.</p>
+<h2 id="getgenerictypeoft"><code>GetGenericTypeOf&lt;T&gt;</code></h2>
+<pre><code class="lang-csharp">Type GetGenericTypeOf&lt;T&gt;(this Type type);
+</code></pre>
+<p>Returns the first generic argument anywhere in <code>type</code>'s inheritance chain that is assignable to <code>T</code>, or <code>null</code> if none is found.</p>
+<pre><code class="lang-csharp">public class MyRepo : Repository&lt;Order&gt; { }
+
+typeof(MyRepo).GetGenericTypeOf&lt;IEntity&gt;(); // typeof(Order), if Order : IEntity
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Tharga/Runtime/blob/master/docs/articles/type-extensions.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

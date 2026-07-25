@@ -1,0 +1,417 @@
+### YamlMime:ManagedReference
+items:
+- uid: Tharga.Runtime.IAssemblyService
+  commentId: T:Tharga.Runtime.IAssemblyService
+  id: IAssemblyService
+  parent: Tharga.Runtime
+  children:
+  - Tharga.Runtime.IAssemblyService.GetTypes(System.String,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Reflection.Assembly)
+  - Tharga.Runtime.IAssemblyService.LoadTypes(System.String,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly)
+  langs:
+  - csharp
+  - vb
+  name: IAssemblyService
+  nameWithType: IAssemblyService
+  fullName: Tharga.Runtime.IAssemblyService
+  type: Interface
+  source:
+    remote:
+      path: Tharga.Runtime/IAssemblyService.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: IAssemblyService
+    path: ../Tharga.Runtime/IAssemblyService.cs
+    startLine: 4
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  syntax:
+    content: public interface IAssemblyService
+    content.vb: Public Interface IAssemblyService
+  derivedClasses:
+  - Tharga.Runtime.AssemblyService
+- uid: Tharga.Runtime.IAssemblyService.LoadTypes(System.String,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly)
+  commentId: M:Tharga.Runtime.IAssemblyService.LoadTypes(System.String,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly)
+  id: LoadTypes(System.String,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Reflection.Assembly)
+  parent: Tharga.Runtime.IAssemblyService
+  langs:
+  - csharp
+  - vb
+  name: LoadTypes(string, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly)
+  nameWithType: IAssemblyService.LoadTypes(string, Func<TypeInfo, bool>, IEnumerable<Assembly>, Assembly)
+  fullName: Tharga.Runtime.IAssemblyService.LoadTypes(string, System.Func<System.Reflection.TypeInfo, bool>, System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Reflection.Assembly)
+  type: Method
+  source:
+    remote:
+      path: Tharga.Runtime/IAssemblyService.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: LoadTypes
+    path: ../Tharga.Runtime/IAssemblyService.cs
+    startLine: 14
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  summary: >-
+    Loads types into the cache. Then the types can be fetched using the GetServiceTypePairs (without a filter).
+
+    See 'GetAssemblies' in 'AssemblyService' for default behaviour.
+  example: []
+  syntax:
+    content: void LoadTypes(string cacheKey, Func<TypeInfo, bool> filter, IEnumerable<Assembly> assemblies = null, Assembly baseAssembly = null)
+    parameters:
+    - id: cacheKey
+      type: System.String
+      description: Unique key for the specific cache.
+    - id: filter
+      type: System.Func{System.Reflection.TypeInfo,System.Boolean}
+      description: Filter the types that should be loaded.
+    - id: assemblies
+      type: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+      description: Provide what assemblies should be used to find types.
+    - id: baseAssembly
+      type: System.Reflection.Assembly
+      description: Assembly to be used as entry point to look for types.
+    content.vb: Sub LoadTypes(cacheKey As String, filter As Func(Of TypeInfo, Boolean), assemblies As IEnumerable(Of Assembly) = Nothing, baseAssembly As Assembly = Nothing)
+  overload: Tharga.Runtime.IAssemblyService.LoadTypes*
+  nameWithType.vb: IAssemblyService.LoadTypes(String, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly)
+  fullName.vb: Tharga.Runtime.IAssemblyService.LoadTypes(String, System.Func(Of System.Reflection.TypeInfo, Boolean), System.Collections.Generic.IEnumerable(Of System.Reflection.Assembly), System.Reflection.Assembly)
+  name.vb: LoadTypes(String, Func(Of TypeInfo, Boolean), IEnumerable(Of Assembly), Assembly)
+- uid: Tharga.Runtime.IAssemblyService.GetTypes(System.String,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Reflection.Assembly)
+  commentId: M:Tharga.Runtime.IAssemblyService.GetTypes(System.String,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Reflection.Assembly)
+  id: GetTypes(System.String,System.Func{System.Reflection.TypeInfo,System.Boolean},System.Reflection.Assembly)
+  parent: Tharga.Runtime.IAssemblyService
+  langs:
+  - csharp
+  - vb
+  name: GetTypes(string, Func<TypeInfo, bool>, Assembly)
+  nameWithType: IAssemblyService.GetTypes(string, Func<TypeInfo, bool>, Assembly)
+  fullName: Tharga.Runtime.IAssemblyService.GetTypes(string, System.Func<System.Reflection.TypeInfo, bool>, System.Reflection.Assembly)
+  type: Method
+  source:
+    remote:
+      path: Tharga.Runtime/IAssemblyService.cs
+      branch: master
+      repo: https://github.com/Tharga/Runtime.git
+    id: GetTypes
+    path: ../Tharga.Runtime/IAssemblyService.cs
+    startLine: 23
+  assemblies:
+  - Tharga.Runtime
+  namespace: Tharga.Runtime
+  summary: >-
+    Gets types from cache. If a filter is provided the cache can be populated on the first call, otherwise LoadTypes
+
+    has to be called first to prepare the cache.
+  example: []
+  syntax:
+    content: TypeInfo[] GetTypes(string cacheKey, Func<TypeInfo, bool> filter = null, Assembly baseAssembly = null)
+    parameters:
+    - id: cacheKey
+      type: System.String
+      description: Unique key for the specific cache.
+    - id: filter
+      type: System.Func{System.Reflection.TypeInfo,System.Boolean}
+      description: Filter the types that should be loaded.
+    - id: baseAssembly
+      type: System.Reflection.Assembly
+      description: Assembly to be used as entry point to look for types.
+    return:
+      type: System.Reflection.TypeInfo[]
+    content.vb: Function GetTypes(cacheKey As String, filter As Func(Of TypeInfo, Boolean) = Nothing, baseAssembly As Assembly = Nothing) As TypeInfo()
+  overload: Tharga.Runtime.IAssemblyService.GetTypes*
+  nameWithType.vb: IAssemblyService.GetTypes(String, Func(Of TypeInfo, Boolean), Assembly)
+  fullName.vb: Tharga.Runtime.IAssemblyService.GetTypes(String, System.Func(Of System.Reflection.TypeInfo, Boolean), System.Reflection.Assembly)
+  name.vb: GetTypes(String, Func(Of TypeInfo, Boolean), Assembly)
+references:
+- uid: Tharga.Runtime
+  commentId: N:Tharga.Runtime
+  href: Tharga.html
+  name: Tharga.Runtime
+  nameWithType: Tharga.Runtime
+  fullName: Tharga.Runtime
+  spec.csharp:
+  - uid: Tharga
+    name: Tharga
+    href: Tharga.html
+  - name: .
+  - uid: Tharga.Runtime
+    name: Runtime
+    href: Tharga.Runtime.html
+  spec.vb:
+  - uid: Tharga
+    name: Tharga
+    href: Tharga.html
+  - name: .
+  - uid: Tharga.Runtime
+    name: Runtime
+    href: Tharga.Runtime.html
+- uid: Tharga.Runtime.IAssemblyService.LoadTypes*
+  commentId: Overload:Tharga.Runtime.IAssemblyService.LoadTypes
+  href: Tharga.Runtime.IAssemblyService.html#Tharga_Runtime_IAssemblyService_LoadTypes_System_String_System_Func_System_Reflection_TypeInfo_System_Boolean__System_Collections_Generic_IEnumerable_System_Reflection_Assembly__System_Reflection_Assembly_
+  name: LoadTypes
+  nameWithType: IAssemblyService.LoadTypes
+  fullName: Tharga.Runtime.IAssemblyService.LoadTypes
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Func{System.Reflection.TypeInfo,System.Boolean}
+  commentId: T:System.Func{System.Reflection.TypeInfo,System.Boolean}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<TypeInfo, bool>
+  nameWithType: Func<TypeInfo, bool>
+  fullName: System.Func<System.Reflection.TypeInfo, bool>
+  nameWithType.vb: Func(Of TypeInfo, Boolean)
+  fullName.vb: System.Func(Of System.Reflection.TypeInfo, Boolean)
+  name.vb: Func(Of TypeInfo, Boolean)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Reflection.TypeInfo
+    name: TypeInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.typeinfo
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Reflection.TypeInfo
+    name: TypeInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.typeinfo
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Assembly>
+  nameWithType: IEnumerable<Assembly>
+  fullName: System.Collections.Generic.IEnumerable<System.Reflection.Assembly>
+  nameWithType.vb: IEnumerable(Of Assembly)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Reflection.Assembly)
+  name.vb: IEnumerable(Of Assembly)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Reflection.Assembly
+    name: Assembly
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.assembly
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Reflection.Assembly
+    name: Assembly
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.assembly
+  - name: )
+- uid: System.Reflection.Assembly
+  commentId: T:System.Reflection.Assembly
+  parent: System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.reflection.assembly
+  name: Assembly
+  nameWithType: Assembly
+  fullName: System.Reflection.Assembly
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Reflection
+  commentId: N:System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Reflection
+  nameWithType: System.Reflection
+  fullName: System.Reflection
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+- uid: Tharga.Runtime.IAssemblyService.GetTypes*
+  commentId: Overload:Tharga.Runtime.IAssemblyService.GetTypes
+  href: Tharga.Runtime.IAssemblyService.html#Tharga_Runtime_IAssemblyService_GetTypes_System_String_System_Func_System_Reflection_TypeInfo_System_Boolean__System_Reflection_Assembly_
+  name: GetTypes
+  nameWithType: IAssemblyService.GetTypes
+  fullName: Tharga.Runtime.IAssemblyService.GetTypes
+- uid: System.Reflection.TypeInfo[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.reflection.typeinfo
+  name: TypeInfo[]
+  nameWithType: TypeInfo[]
+  fullName: System.Reflection.TypeInfo[]
+  nameWithType.vb: TypeInfo()
+  fullName.vb: System.Reflection.TypeInfo()
+  name.vb: TypeInfo()
+  spec.csharp:
+  - uid: System.Reflection.TypeInfo
+    name: TypeInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.typeinfo
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Reflection.TypeInfo
+    name: TypeInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.typeinfo
+  - name: (
+  - name: )
