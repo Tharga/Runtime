@@ -209,78 +209,40 @@ public class ServiceCollectionExtensionsTests
     }
 }
 
-public class SimpleService
-{
-}
+public class SimpleService;
 
-public interface IServiceInterface
-{
-}
+public interface IServiceInterface;
 
-public class ServiceWithInterface : IServiceInterface
-{
-}
+public class ServiceWithInterface : IServiceInterface;
 
-public abstract class ServiceBase
-{
-}
+public abstract class ServiceBase;
 
-public class ServiceWithBase : ServiceBase
-{
-}
+public class ServiceWithBase : ServiceBase;
 
-public interface IServiceInterface2
-{
-}
+public interface IServiceInterface2;
 
-public class ServiceWithBaseAndInterface : ServiceBase, IServiceInterface2
-{
-}
+public class ServiceWithBaseAndInterface : ServiceBase, IServiceInterface2;
 
-public class ServiceWithBaseButNoInterface : ServiceBase
-{
-}
+public class ServiceWithBaseButNoInterface : ServiceBase;
 
-public interface ICommonServiceInterface
-{
-}
+public interface ICommonServiceInterface;
 
-public class Service1WithCommonInterface : ICommonServiceInterface
-{
-}
+public class Service1WithCommonInterface : ICommonServiceInterface;
 
-public class Service2WithCommonInterface : ICommonServiceInterface
-{
-}
+public class Service2WithCommonInterface : ICommonServiceInterface;
 
-public interface IServiceInterfaceA
-{
-}
+public interface IServiceInterfaceA;
 
-public interface IServiceInterfaceB
-{
-}
+public interface IServiceInterfaceB;
 
-public class ServiceWithTwoInterfaces : IServiceInterfaceA, IServiceInterfaceB
-{
-}
+public class ServiceWithTwoInterfaces : IServiceInterfaceA, IServiceInterfaceB;
 
-public interface IRepository
-{
-}
+public interface IRepository;
 
-public interface IRepositoryA : IRepository
-{
-}
+public interface IRepositoryA : IRepository;
 
-public class RepositoryA : IRepositoryA
-{
-}
+public class RepositoryA : IRepositoryA;
 
-public interface IRepositoryB : IRepository
-{
-}
+public interface IRepositoryB : IRepository;
 
-public class RepositoryB : IRepositoryB
-{
-}
+public class RepositoryB : IRepositoryB;

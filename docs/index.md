@@ -4,7 +4,7 @@ _layout: landing
 
 # Tharga.Runtime
 
-Assembly scanning, runtime type discovery, and filter-based dependency injection for **.NET 8 / 9 / 10**. Provides `IAssemblyService` (cached type lookups across loaded assemblies), filter-based `IServiceCollection` extensions for registering many implementations of an interface in one call, and a small set of `Type` helpers used across Tharga libraries.
+Assembly scanning, runtime type discovery, and filter-based dependency injection for **.NET 10**. Provides `IAssemblyService` (cached type lookups across loaded assemblies), filter-based `IServiceCollection` extensions for registering many implementations of an interface in one call, and a small set of `Type` helpers used across Tharga libraries.
 
 ## Package
 
