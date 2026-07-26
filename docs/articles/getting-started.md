@@ -13,7 +13,7 @@ Pick the one that fits — they can also be combined.
 dotnet add package Tharga.Runtime
 ```
 
-Targets `net8.0`, `net9.0`, `net10.0`.
+Targets `net10.0`.
 
 ## Scenario 1 — Cached type lookups
 

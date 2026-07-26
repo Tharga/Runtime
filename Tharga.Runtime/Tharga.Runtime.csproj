@@ -8,8 +8,9 @@
 		<Product>Tharga Runtime</Product>
 		<Description>Tools Assembly.</Description>
 		<PackageIconUrl>https://thargelion.net/assets/component-runtime.png</PackageIconUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<PackageProjectUrl>https://github.com/Tharga/Toolkit</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/Tharga/Runtime</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<IncludeSymbols>true</IncludeSymbols>
 		<IncludeSource>true</IncludeSource>
