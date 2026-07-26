@@ -133,12 +133,7 @@ public static class TypeExtensions
         var p = type;
         while (!p.IsGenericType)
         {
-            var parent = p.ImplementedInterfaces.FirstOrDefault();
-            if (parent == null)
-            {
-                parent = p.BaseType;
-            }
-
+            var parent = p.ImplementedInterfaces.FirstOrDefault() ?? p.BaseType;
             if (parent == null) return false;
 
             p = parent.GetTypeInfo();
