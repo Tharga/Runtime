@@ -92,7 +92,8 @@ public static class TypeExtensions
     }
 
     /// <summary>
-    ///     Checks if a type is or is based of a certain type. Also checks interfaces and collection-types.
+    ///     Checks if a type is, inherits from or implements a certain type. Walks base types and interfaces.
+    ///     An open generic type definition, such as typeof(IHandler&lt;&gt;), matches any of its closed forms.
     /// </summary>
     /// <param name="item"></param>
     /// <param name="type"></param>
@@ -101,7 +102,7 @@ public static class TypeExtensions
     {
         if (item == null) return false;
         if (item == type) return true;
-        if (item.ToString().Split('[')[0] == type.ToString().Split('[')[0]) return true;
+        if (type.IsGenericTypeDefinition && item.IsGenericType && item.GetGenericTypeDefinition() == type) return true;
 
         if (type.IsAssignableFrom(item))
         {
