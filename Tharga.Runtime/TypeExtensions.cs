@@ -109,9 +109,9 @@ public static class TypeExtensions
             return true;
         }
 
-        if (item.BaseType != null && item.BaseType != typeof(object))
+        if (item.BaseType != null && item.BaseType != typeof(object) && item.BaseType.IsOfType(type))
         {
-            return item.BaseType.IsOfType(type);
+            return true;
         }
 
         foreach (var inf in item.GetInterfaces())

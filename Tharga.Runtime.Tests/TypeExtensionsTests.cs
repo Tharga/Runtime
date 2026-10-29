@@ -68,6 +68,14 @@ public class TypeExtensionsTests
     }
 
     [Fact]
+    public void ClassWithBaseClassMatchesOpenGenericInterfaceItImplements()
+    {
+        typeof(IsOfTypeHandlerWithBase).IsOfType(typeof(IIsOfTypeHandler<>)).Should().BeTrue();
+        typeof(IsOfTypeHandlerWithBase).IsOfType(typeof(IIsOfTypeHandler<IsOfTypeA>)).Should().BeTrue();
+        typeof(IsOfTypeHandlerWithBase).IsOfType(typeof(IsOfTypePlainBase)).Should().BeTrue();
+    }
+
+    [Fact]
     public void ClosedGenericMatchesTheSameClosedForm()
     {
         typeof(IsOfTypeHandlerA).IsOfType(typeof(IIsOfTypeHandler<IsOfTypeA>)).Should().BeTrue();
@@ -97,3 +105,7 @@ public class IsOfTypeHandlerB : IIsOfTypeHandler<IsOfTypeB>;
 public class IsOfTypeBase<T>;
 
 public class IsOfTypeDerived : IsOfTypeBase<IsOfTypeA>;
+
+public class IsOfTypePlainBase;
+
+public class IsOfTypeHandlerWithBase : IsOfTypePlainBase, IIsOfTypeHandler<IsOfTypeA>;
