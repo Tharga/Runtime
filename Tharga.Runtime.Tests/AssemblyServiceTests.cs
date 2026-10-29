@@ -93,6 +93,24 @@ public class AssemblyServiceTests
     }
 
     [Fact]
+    public void GetTypesWithSameCacheKeyOnSeparateInstances()
+    {
+        //Arrange
+        const string cacheKey = nameof(GetTypesWithSameCacheKeyOnSeparateInstances);
+        var baseAssembly = Assembly.GetAssembly(typeof(TypeMissingException));
+        var first = new AssemblyService();
+        var second = new AssemblyService();
+
+        //Act
+        var firstTypes = first.GetTypes(cacheKey, x => x == typeof(TypeMissingException), baseAssembly);
+        var secondTypes = second.GetTypes(cacheKey, x => x == typeof(AssemblyService), baseAssembly);
+
+        //Assert
+        firstTypes.Should().Equal(typeof(TypeMissingException).GetTypeInfo());
+        secondTypes.Should().Equal(typeof(AssemblyService).GetTypeInfo());
+    }
+
+    [Fact]
     public void GetLoadedAssemblies()
     {
         //Act

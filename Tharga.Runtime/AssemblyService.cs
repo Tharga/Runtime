@@ -5,7 +5,7 @@ namespace Tharga.Runtime;
 
 public class AssemblyService : IAssemblyService
 {
-    private static readonly ConcurrentDictionary<string, TypeInfo[]> _cache = new();
+    private readonly ConcurrentDictionary<string, TypeInfo[]> _cache = new();
 
     internal AssemblyService()
     {
