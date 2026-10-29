@@ -43,4 +43,57 @@ public class TypeExtensionsTests
         type.IsOfType<IServiceInterface>().Should().BeTrue();
         type.IsOfType<ServiceWithInterface>().Should().BeFalse();
     }
+
+    [Fact]
+    public void ClosedGenericDoesNotMatchAnotherClosedFormOfTheSameGeneric()
+    {
+        typeof(List<int>).IsOfType(typeof(List<string>)).Should().BeFalse();
+        typeof(IsOfTypeHandlerB).IsOfType(typeof(IIsOfTypeHandler<IsOfTypeA>)).Should().BeFalse();
+    }
+
+    [Fact]
+    public void ArrayDoesNotMatchItsElementType()
+    {
+        typeof(int[]).IsOfType(typeof(int)).Should().BeFalse();
+        typeof(int[]).IsOfType(typeof(IEnumerable<int>)).Should().BeTrue();
+    }
+
+    [Fact]
+    public void OpenGenericDefinitionMatchesItsClosedForms()
+    {
+        typeof(List<int>).IsOfType(typeof(List<>)).Should().BeTrue();
+        typeof(List<int>).IsOfType(typeof(IList<>)).Should().BeTrue();
+        typeof(IsOfTypeHandlerA).IsOfType(typeof(IIsOfTypeHandler<>)).Should().BeTrue();
+        typeof(IsOfTypeDerived).IsOfType(typeof(IsOfTypeBase<>)).Should().BeTrue();
+    }
+
+    [Fact]
+    public void ClosedGenericMatchesTheSameClosedForm()
+    {
+        typeof(IsOfTypeHandlerA).IsOfType(typeof(IIsOfTypeHandler<IsOfTypeA>)).Should().BeTrue();
+        typeof(IsOfTypeDerived).IsOfType(typeof(IsOfTypeBase<IsOfTypeA>)).Should().BeTrue();
+    }
+
+    [Fact]
+    public void FilterOnClosedGenericFindsOnlyThatClosedForm()
+    {
+        var pairs = ServiceCollectionExtensions.GetServiceTypePairs(x => x.IsOfType<IIsOfTypeHandler<IsOfTypeA>>(), baseAssembly: typeof(TypeExtensionsTests).Assembly).ToArray();
+
+        pairs.Should().Contain((typeof(IIsOfTypeHandler<IsOfTypeA>), typeof(IsOfTypeHandlerA)));
+        pairs.Should().NotContain(x => x.ImplementationType == typeof(IsOfTypeHandlerB));
+    }
 }
+
+public interface IIsOfTypeHandler<T>;
+
+public class IsOfTypeA;
+
+public class IsOfTypeB;
+
+public class IsOfTypeHandlerA : IIsOfTypeHandler<IsOfTypeA>;
+
+public class IsOfTypeHandlerB : IIsOfTypeHandler<IsOfTypeB>;
+
+public class IsOfTypeBase<T>;
+
+public class IsOfTypeDerived : IsOfTypeBase<IsOfTypeA>;

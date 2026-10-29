@@ -9,12 +9,16 @@ bool IsOfType<T>(this Type item);
 bool IsOfType(this Type item, Type type);
 ```
 
-Returns `true` if `item` is, inherits from, or implements `type`. Walks the base-type chain and implemented interfaces. Comparison strips generic argument differences (`List<int>` matches `List<>`).
+Returns `true` if `item` is, inherits from, or implements `type`. Walks the base-type chain and implemented interfaces. An open generic type definition matches any of its closed forms (`List<int>` matches `List<>`), but two different closed forms do not match each other, and an array does not match its element type.
 
 ```csharp
-typeof(OrderHandler).IsOfType<IHandler>();   // true
-typeof(List<int>).IsOfType(typeof(IList<>)); // true
+typeof(OrderHandler).IsOfType<IHandler>();          // true
+typeof(List<int>).IsOfType(typeof(IList<>));        // true
+typeof(List<int>).IsOfType(typeof(List<string>));   // false
+typeof(int[]).IsOfType(typeof(int));                // false
 ```
+
+Before 1.1, the comparison stripped generic arguments by name, so any two closed forms of the same generic matched, and an array matched its element type. A registration filter such as `x => x.IsOfType<IHandler<A>>()` then also registered implementations of `IHandler<B>`.
 
 Used as the primary building block for [DI filters](service-registration.md) and [assembly scans](assembly-service.md).
 
