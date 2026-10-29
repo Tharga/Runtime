@@ -72,6 +72,12 @@ public static class TypeExtensions
                 var p1 = tvn.IndexOf("Version=", startIndex, StringComparison.Ordinal);
                 if (p1 == -1) break;
                 var p2 = tvn.IndexOf(",", p1, StringComparison.Ordinal);
+                if (p2 == -1)
+                {
+                    tvn = tvn.Substring(0, p1 + 8) + version;
+                    break;
+                }
+
                 startIndex = p2;
                 tvn = tvn.Substring(0, p1 + 8) + version + tvn.Substring(p2);
             }
