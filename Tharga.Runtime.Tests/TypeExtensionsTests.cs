@@ -82,6 +82,27 @@ public class TypeExtensionsTests
         pairs.Should().Contain((typeof(IIsOfTypeHandler<IsOfTypeA>), typeof(IsOfTypeHandlerA)));
         pairs.Should().NotContain(x => x.ImplementationType == typeof(IsOfTypeHandlerB));
     }
+
+    [Fact]
+    public void GetTypeResolvesNameWhereVersionIsTheLastPart()
+    {
+        TypeExtensions.GetType("System.String, System.Private.CoreLib, Version=9.0.0.0").Should().Be(typeof(string));
+    }
+
+    [Fact]
+    public void GetTypeResolvesGenericNameWhereVersionIsTheLastPart()
+    {
+        var typeName = $"System.Collections.Generic.List`1[[{typeof(string).AssemblyQualifiedName}]], System.Private.CoreLib, Version=9.0.0.0";
+
+        TypeExtensions.GetType(typeName).Should().Be(typeof(List<string>));
+    }
+
+    [Fact]
+    public void GetTypeResolvesAssemblyQualifiedName()
+    {
+        TypeExtensions.GetType(typeof(string).AssemblyQualifiedName).Should().Be(typeof(string));
+        TypeExtensions.GetType(typeof(List<string>).AssemblyQualifiedName).Should().Be(typeof(List<string>));
+    }
 }
 
 public interface IIsOfTypeHandler<T>;
