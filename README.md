@@ -6,6 +6,8 @@
 
 **Docs:** [runtime.tharga.net](https://runtime.tharga.net) — guides, API reference, and walkthroughs of the assembly service, filter-based DI, and type helpers.
 
+**Supported frameworks:** `net10.0` and `net11.0`.
+
 ## Assembly and TypeService Service
 
 Register the service
